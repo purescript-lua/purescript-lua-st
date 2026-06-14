@@ -10,7 +10,7 @@ return {
   ["while"] = (function(f) return function(a) return function() while f() do a() end end end end),
 
   ["for"] = (function(lo)
-    return function(hi) return function(f) return function() for i = lo, hi do f(i)() end end end end
+    return function(hi) return function(f) return function() for i = lo, hi - 1 do f(i)() end end end end
   end),
 
   foreach = (function(as) return function(f) return function() for i = 1, #as do f(as[i])() end end end end),
