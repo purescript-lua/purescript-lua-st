@@ -1,12 +1,16 @@
-# purescript-st
+# purescript-lua-st
 
-[![Latest release](http://img.shields.io/github/release/purescript/purescript-st.svg)](https://github.com/purescript/purescript-st/releases)
-[![Build status](https://github.com/purescript/purescript-st/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-st/actions?query=workflow%3ACI+branch%3Amaster)
-[![Pursuit](https://pursuit.purescript.org/packages/purescript-st/badge)](https://pursuit.purescript.org/packages/purescript-st)
+[![CI](https://github.com/purescript-lua/purescript-lua-st/actions/workflows/ci.yml/badge.svg)](https://github.com/purescript-lua/purescript-lua-st/actions/workflows/ci.yml)
 
-The ST effect, for safe local mutation.
+The ST effect, for safe local mutation. This is the Lua fork of
+[`purescript-st`](https://github.com/purescript/purescript-st) for the
+[pslua](https://github.com/purescript-lua/purescript-lua) compiler backend: it
+keeps the upstream PureScript API and replaces the JavaScript FFI with Lua that
+runs on Lua 5.1.
 
 ## Installation
+
+It ships in the [purescript-lua package set](https://github.com/purescript-lua/purescript-lua-package-sets):
 
 ```
 spago install st
@@ -14,4 +18,5 @@ spago install st
 
 ## Documentation
 
-Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-st).
+The API matches upstream, so the module docs are
+[published on Pursuit](https://pursuit.purescript.org/packages/purescript-st).

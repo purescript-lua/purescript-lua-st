@@ -17,7 +17,9 @@ return {
 
   mkSTFn9 = (function(fn) return function(a, b, c, d, e, f, g, h, i) return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)() end end),
 
-  mkSTFn10 = (function(fn) return function(a, b, c, d, e, f, g, h, i, j) return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)() end end),
+  mkSTFn10 = (function(fn)
+    return function(a, b, c, d, e, f, g, h, i, j) return fn(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)() end
+  end),
 
   runSTFn1 = (function(fn) return function(a) return function() return fn(a) end end end),
 
