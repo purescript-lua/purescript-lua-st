@@ -66,12 +66,12 @@ instance monadRecST :: MonadRec (ST r) where
         Done _ -> pure unit
     fromDone <$> read r
     where
-      fromDone :: forall a b. Step a b -> b
-      fromDone = unsafePartial \(Done b) -> b
+    fromDone :: forall a b. Step a b -> b
+    fromDone = unsafePartial \(Done b) -> b
 
-      isLooping = case _ of
-        Loop _ -> true
-        _ -> false
+    isLooping = case _ of
+      Loop _ -> true
+      _ -> false
 
 instance semigroupST :: Semigroup a => Semigroup (ST r a) where
   append = lift2 append
@@ -122,10 +122,12 @@ foreign import read :: forall a r. STRef r a -> ST r a
 -- | Update the value of a mutable reference by applying a function
 -- | to the current value, computing a new state value for the reference and
 -- | a return value.
-modify' :: forall r a b. (a -> { state :: a, value :: b }) -> STRef r a -> ST r b
+modify'
+  :: forall r a b. (a -> { state :: a, value :: b }) -> STRef r a -> ST r b
 modify' = modifyImpl
 
-foreign import modifyImpl :: forall r a b. (a -> { state :: a, value :: b }) -> STRef r a -> ST r b
+foreign import modifyImpl
+  :: forall r a b. (a -> { state :: a, value :: b }) -> STRef r a -> ST r b
 
 -- | Modify the value of a mutable reference by applying a function to the
 -- | current value. The modified value is returned.
