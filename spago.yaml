@@ -12,6 +12,11 @@ package:
     - prelude
     - tailrec
     - unsafe-coerce
+  test:
+    main: Test.Main
+    dependencies:
+      - assert
+      - console
 workspace:
   backend:
     cmd: "true"
